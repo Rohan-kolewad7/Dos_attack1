@@ -3,9 +3,43 @@ import numpy as np
 import pickle
 import socket
 import struct
+import zipfile
+import requests
+from io import BytesIO
+#--------------------------------------
+#.         new method to load zip file
+
+# URL to the zip file
+
+zip_file_url = "https://github.com/Rohan-kolewad7/Dos_attack1/raw/main/rf_model.zip"
+
+# Fetch the zip file
+response = requests.get(zip_file_url)
+
+if response.status_code == 200:
+    # Extract the pickle file from the zip archive
+    with zipfile.ZipFile(BytesIO(response.content), 'r') as zip_ref:
+        zip_ref.extractall('temp_folder')
+
+    # Load the extracted pickle file
+    with open('temp_folder/rf_model.pkl', 'rb') as f:
+        model = pickle.load(f)
+
+    # Now you can work with the loaded model
+    st.write("Loaded model:", model)
+else:
+    st.write("Failed to fetch the zip file.")
+
+
+
+
+#--------------------------------------
+#old code
 
 # Load the machine learning model
-model = pickle.load(open("rf_model.pkl", "rb"))
+#model = #pickle.load(open("rf_model.pkl","rb"))
+
+#--------------------------------------
 
 # Function to convert IPv4 to numeric
 def ipv4_to_numeric(ip):
