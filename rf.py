@@ -46,7 +46,7 @@ def ipv4_to_numeric(ip):
     try:
         return struct.unpack("!I", socket.inet_aton(ip))[0]
     except OSError:
-        st.write(f"Error converting IP addres: {ip}")
+        st.write(f": {ip}")
         return 0
     
     
