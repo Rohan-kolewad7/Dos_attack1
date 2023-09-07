@@ -1,4 +1,5 @@
 import streamlit as st
+from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import pickle
 import socket
