@@ -10,10 +10,10 @@ from io import BytesIO
 #.         new method to load zip file
 
 # URL to the zip file
-
+# Define the GitHub URL to the zip file
 zip_file_url = "https://github.com/Rohan-kolewad7/Dos_attack1/raw/main/rf_model.zip"
 
-# Fetch the zip file
+# Fetch the zip file from GitHub
 response = requests.get(zip_file_url)
 
 if response.status_code == 200:
@@ -28,16 +28,8 @@ if response.status_code == 200:
     # Now you can work with the loaded model
     st.write("Loaded model:", model)
 else:
-    st.write("Failed to fetch the zip file.")
+    st.write("Failed to fetch the zip file from GitHub.")
 
-
-
-
-#--------------------------------------
-#old code
-
-# Load the machine learning model
-#model = #pickle.load(open("rf_model.pkl","rb"))
 
 #--------------------------------------
 
