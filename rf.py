@@ -11,7 +11,7 @@ from io import BytesIO
 
 # URL to the zip file
 
-zip_file_url = "https://github.com/Rohan-kolewad7/Dos_attack1/raw/main/rf_model.zip"
+zip_file_url = "https://github.com/Rohan-kolewad7/Dos_attack1/raw/cb40176d1f402dbb071d5e8c48d380036add6e29/rf_model.zip"
 
 # Fetch the zip file
 response = requests.get(zip_file_url)
